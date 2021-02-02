@@ -1,4 +1,10 @@
+import { useState } from "react";
+
 function App() {
+  var id = Number(620610818);
+  var n = Number(1);
+  const [count, setCount] = useState(620610818);
+
   const persons = [
     {
       name: "Bob",
@@ -16,6 +22,26 @@ function App() {
       <h3 class="title is-3">Person List</h3>
 
       {/* Convert me to a component! */}
+      {persons.map((it) => {
+        return (
+          <>
+            <table class="table is-bordered mb-3">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>{it.name}</td>
+                  <td>{it.male}</td>
+                  <td>{it.age}</td>
+                </tr>
+              </tbody>
+            </table>
+          </>
+        );
+      })}
       <table class="table is-bordered mb-3">
         <tbody>
           <tr>
@@ -24,19 +50,40 @@ function App() {
             <th>Age</th>
           </tr>
           <tr>
-            <td>Bob</td>
-            <td>male</td>
-            <td>50</td>
+            <td>Sunisa Deeratrum</td>
+            <td>Female</td>
+            <td>21</td>
           </tr>
         </tbody>
       </table>
 
       {/* Code me please! */}
       <h3 class="title is-3">ID Counter</h3>
-      <p>YOUR ID HERE</p>
-      <button>-</button>
-      <button>reset</button>
-      <button>+</button>
+      <p>{count}</p>
+      <button
+        onClick={(e) => {
+          setCount(count - n);
+          n++;
+        }}
+      >
+        -
+      </button>
+      <button
+        onClick={(e) => {
+          setCount(id);
+          n = 1;
+        }}
+      >
+        reset
+      </button>
+      <button
+        onClick={(e) => {
+          setCount(count + n);
+          n++;
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }
