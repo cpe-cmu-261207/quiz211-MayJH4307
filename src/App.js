@@ -1,5 +1,33 @@
 import { useState } from "react";
 
+function table2(props) {
+  const h = props.value;
+  return (
+    <>
+      {h.map((it) => {
+        return (
+          <>
+            <table class="table is-bordered mb-3">
+              <tbody>
+                <tr>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>{it.name}</td>
+                  <td>{it.gender}</td>
+                  <td>{it.age}</td>
+                </tr>
+              </tbody>
+            </table>
+          </>
+        );
+      })}
+    </>
+  );
+}
+
 function App() {
   var id = Number(620610818);
   var n = Number(1);
@@ -42,6 +70,7 @@ function App() {
           </>
         );
       })}
+      {/*<table2 value={persons} />*/}
       <table class="table is-bordered mb-3">
         <tbody>
           <tr>
