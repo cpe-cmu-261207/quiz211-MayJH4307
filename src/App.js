@@ -34,7 +34,7 @@ function App() {
                 </tr>
                 <tr>
                   <td>{it.name}</td>
-                  <td>{it.male}</td>
+                  <td>{it.gender}</td>
                   <td>{it.age}</td>
                 </tr>
               </tbody>
